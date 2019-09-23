@@ -1,27 +1,49 @@
 import java.util.Random;
 import java.util.Scanner;
+
 public class Adventure {
+
     public static void main(String[] args) {
+
+        //ALLOWS USER INPUT
+
         Scanner sc = new Scanner(System.in);
+
+        //GENERATES A RANDOM NUMBER
+
         Random random = new Random();
+
+        //GLOBAL VAR
 
         int playerHealth = 100;
         int enemyHealth = 100;
+        int playerPotionCount = 3;
 
 
+        //START OF THE GAME
 
         System.out.println("Do you want to play a game?");
+
         String begin = sc.nextLine();
+
         String userName = "";
+
+        //CHECKS USER INPUT
+
         if(begin.equalsIgnoreCase("yes")){
             System.out.println("Good what's your name?");
         }else{
             System.out.println("Too bad, what's your name?");
         }
+
         userName = sc.nextLine();
 
         System.out.println("Did you say Bob?");
+
         String nameConfirm = sc.nextLine();
+
+        //CHECKS IF USER ENTERED THE NAME BOB OR NOT
+
         if(nameConfirm.equalsIgnoreCase("yes")){
             System.out.println("You're lying, we're off to a rough start " + userName);
         }else{
@@ -29,9 +51,29 @@ public class Adventure {
             userName = "Bob";
         }
 
+        System.out.println("`;-.          ___,\n" +
+                "  `.`\\_...._/`.-\"`\n" +
+                "    \\        /      ,\n" +
+                "    /()   () \\    .' `-._\n" +
+                "   |)  .    ()\\  /   _.'\n" +
+                "   \\  -'-     ,; '. <\n" +
+                "    ;.__     ,;|   > \\\n" +
+                "   / ,    / ,  |.-'.-'\n" +
+                "  (_/    (_/ ,;|.<`\n" +
+                "    \\    ,     ;-`\n" +
+                "     >   \\    /\n" +
+                "    (_,-'`> .'\n" +
+                "         (_,'");
+
         System.out.println("A wild Pikachu appears \n");
 
+
+
+        //RUNS BATTLE SEQUENCE WHILE ENEMY OR PLAYER HEALTH IS GREATER THAN ZERO
+
         while (enemyHealth > 0 || playerHealth > 0){
+
+            System.out.println("\n \n \n \n \n \n \n \n \n");
 
             if (playerHealth <= 0){
                 System.out.println("GAME OVER YOU LOSER");
@@ -44,9 +86,13 @@ public class Adventure {
 
                 System.out.println("\n 1) attack \n");
 
+                System.out.println("2) Use Potion \n");
+
                 System.out.println(" What do you wanna do? ");
 
                 String playerAction = sc.nextLine();
+
+                //PRINTS THE RESULT OF THE ATTACKS
 
                 if(playerAction.equalsIgnoreCase("attack") || playerAction.equalsIgnoreCase("1")){
                     int playerAttack = random.nextInt(20);
@@ -58,13 +104,30 @@ public class Adventure {
                     System.out.println("Pikachu attacks back");
                     playerHealth-= enemyAttack;
                     System.out.println("Pikachu did " + enemyAttack + " damage");
-                }
-            }
+                } else if(playerAction.equalsIgnoreCase("use potion") || playerAction.equalsIgnoreCase("2")) {
+                    if(playerPotionCount == 0) {
+                        System.out.println("You don't have any potions left, learn to count");
+                    } else {
+                        playerHealth += 10;
+                        System.out.println("Your health increased to " + playerHealth);
+                        System.out.println(" ");
+                        playerPotionCount -= 1;
+                        System.out.println("You have " + playerPotionCount + " potions left");
+
+
+                    } //If
+
+                    int enemyAttack = random.nextInt(20);
+                    System.out.println("Pikachu attacks back");
+                    playerHealth-= enemyAttack;
+                    System.out.println("Pikachu did " + enemyAttack + " damage \n");
+                } //If
+            } //Outer If
 
 
 
-        }
-    }
+        } //While
+    } //Main()
 
     public static String displayStats(int playerHealth, int enemyHealth){
         return "============================ \n" +
@@ -73,5 +136,6 @@ public class Adventure {
                 + "ENEMY STATS \n" +
                 "health: " + enemyHealth;
 
-    }
-}
+    } //displayStats()
+
+}//Adventure class

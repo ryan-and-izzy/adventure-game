@@ -21,6 +21,47 @@ public class Adventure {
 
 
         //START OF THE GAME
+        System.out.println(
+                "    ▄██▀▀▀▀▀▀▀▀▀▀▀▀▀██▄\n" +
+                "   ███                ███\n" +
+                "  ███   ▄▀▀▄     ▄▀▀▄   ███\n" +
+                " ████ ▄▀    ▀▄─▄▀    ▀▄ ████\n" +
+                " ████  ▄████    ████▄  █████\n" +
+                "█████ ██   ██   ██   ██ █████\n" +
+                "█████ ██ █ ██   ██ █ ██ █████\n" +
+                "█████ ██   █▀─▄─▀█   ██ █████\n" +
+                "████▀──▀▀▀▀▀─▄█▄─▀▀▀▀▀  ▀████\n" +
+                "███ ▄▀▀▀▄    ███   ▄▀▀▀▄ ███\n" +
+                "███  ▄▀▄ █  █████  █ ▄▀▄  ███\n" +
+                "███ █  █ █  █████  █ █  █ ███\n" +
+                "███ █ ▀  █ ▄█████▄ █  ▀ █ ███\n" +
+                "███▄ ▀▀▀▀  █─▀█▀─█  ▀▀▀▀─▄███\n" +
+                "████                     ████\n" +
+                " ███   ▀█████████████▀   ████\n" +
+                " ████     █      █    █████\n" +
+                "  ███▄  █    █    █  ▄█████\n" +
+                "   ▀█████▄▄███▄▄█████▀\n" +
+                "          █▄     ▄█\n" +
+                "       ▄████     ████▄\n" +
+                "   ▄██████████{}██████████▄\n" +
+                "  ███▀   █████/\\████   ▀███\n" +
+                "▌▌▌▌▒▒   █████  ████   ▒▒▐▐▐▐\n" +
+                "      ▒▒ █████\\/█████  ▒▒\n" +
+                "        ▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n" +
+                "         ████░░█████\n" +
+                "        █████░░██████\n" +
+                "      ███████░░███████\n" +
+                "     █████  █░░█  █████\n" +
+                "     █████  ████  █████\n" +
+                "      ████   ██   ████\n" +
+                "      ████  ████  ████\n" +
+                " ██    ██   ████   ██     ██\n" +
+                " ██   ████  ████  ████    ██\n" +
+                " ███████████████████████████\n" +
+                " ██         ████          ██\n" +
+                " ██         ████          ██\n" +
+                "            ████\n" +
+                "             ██");
 
         System.out.println("Do you want to play a game?");
 
@@ -67,28 +108,43 @@ public class Adventure {
 
         System.out.println("A wild Pikachu appears \n");
 
-
+        System.out.println("Press enter to Begin Fight!");
+        sc.nextLine();
 
         //RUNS BATTLE SEQUENCE WHILE ENEMY OR PLAYER HEALTH IS GREATER THAN ZERO
 
         while (enemyHealth > 0 || playerHealth > 0){
+            System.out.println("\n\n\n\n\n\n\n\n\n\n");
 
-            System.out.println("\n \n \n \n \n \n \n \n \n");
 
             if (playerHealth <= 0){
                 System.out.println("GAME OVER YOU LOSER");
                 break;
             } else if (enemyHealth <= 0){
                 System.out.println("YOU DEFEATED PIKACHU!");
+
+                System.out.println("`;-.          ___,\n" +
+                        "  `.`\\_...._/`.-\"`\n" +
+                        "    \\        /      ,\n" +
+                        "    / X   X  \\    .' `-._\n" +
+                        "   |)  .    ()\\  /   _.'\n" +
+                        "   \\  -'-     ,; '. <\n" +
+                        "    ;.__     ,;|   > \\\n" +
+                        "   / ,    / ,  |.-'.-'\n" +
+                        "  (_/    (_/ ,;|.<`\n" +
+                        "    \\    ,     ;-`\n" +
+                        "     >   \\    /\n" +
+                        "    (_,-'`> .'\n" +
+                        "         (_,'");
                 break;
             }else{
-                System.out.println( displayStats(playerHealth, enemyHealth));
+                System.out.println( displayStats(playerHealth, enemyHealth, playerPotionCount));
 
                 System.out.println("\n 1) attack \n");
 
-                System.out.println("2) Use Potion \n");
+                System.out.println(" 2) Use Potion \n");
 
-                System.out.println(" What do you wanna do? ");
+                System.out.println(" What do you wanna do?  \n\n\n");
 
                 String playerAction = sc.nextLine();
 
@@ -100,8 +156,7 @@ public class Adventure {
                     enemyHealth -= playerAttack;
                     System.out.println("CRITICAL HIT!");
                     System.out.println("you did " + playerAttack + " damage to Pikachu");
-                    System.out.println("=============================");
-                    System.out.println("Pikachu attacks back");
+                    System.out.println("Pikachu attacks");
                     playerHealth-= enemyAttack;
                     System.out.println("Pikachu did " + enemyAttack + " damage");
                 } else if(playerAction.equalsIgnoreCase("use potion") || playerAction.equalsIgnoreCase("2")) {
@@ -123,18 +178,19 @@ public class Adventure {
                     System.out.println("Pikachu did " + enemyAttack + " damage \n");
                 } //If
             } //Outer If
-
+            System.out.println("Press Enter to continue");
+            sc.nextLine();
 
 
         } //While
     } //Main()
 
-    public static String displayStats(int playerHealth, int enemyHealth){
+    public static String displayStats(int playerHealth, int enemyHealth, int potionCount){
         return "============================ \n" +
                 " YOUR STATS \n " +
-                "Health: " + playerHealth + "\n" + "----------------- \n"
-                + "ENEMY STATS \n" +
-                "health: " + enemyHealth;
+                "Health: " + playerHealth + "\n Potions: " + potionCount + "\n ----------------- \n"
+                + " ENEMY STATS \n" +
+                " health: " + enemyHealth;
 
     } //displayStats()
 

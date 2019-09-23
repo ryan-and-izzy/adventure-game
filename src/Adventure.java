@@ -17,6 +17,7 @@ public class Adventure {
 
         int playerHealth = 100;
         int enemyHealth = 100;
+        int playerPotionCount = 3;
 
 
         //START OF THE GAME
@@ -67,6 +68,8 @@ public class Adventure {
 
                 System.out.println("\n 1) attack \n");
 
+                System.out.println("2) Use Potion \n");
+
                 System.out.println(" What do you wanna do? ");
 
                 String playerAction = sc.nextLine();
@@ -83,13 +86,30 @@ public class Adventure {
                     System.out.println("Pikachu attacks back");
                     playerHealth-= enemyAttack;
                     System.out.println("Pikachu did " + enemyAttack + " damage");
-                }
-            }
+                } else if(playerAction.equalsIgnoreCase("use potion") || playerAction.equalsIgnoreCase("2")) {
+                    if(playerPotionCount == 0) {
+                        System.out.println("You don't have any potions left, learn to count");
+                    } else {
+                        playerHealth += 10;
+                        System.out.println("Your health increased to " + playerHealth);
+                        System.out.println(" ");
+                        playerPotionCount -= 1;
+                        System.out.println("You have " + playerPotionCount + " potions left");
+
+
+                    } //If
+
+                    int enemyAttack = random.nextInt(20);
+                    System.out.println("Pikachu attacks back");
+                    playerHealth-= enemyAttack;
+                    System.out.println("Pikachu did " + enemyAttack + " damage \n");
+                } //If
+            } //Outer If
 
 
 
-        }
-    }
+        } //While
+    } //Main()
 
     public static String displayStats(int playerHealth, int enemyHealth){
         return "============================ \n" +
@@ -98,5 +118,6 @@ public class Adventure {
                 + "ENEMY STATS \n" +
                 "health: " + enemyHealth;
 
-    }
-}
+    } //displayStats()
+
+}//Adventure class

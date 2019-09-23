@@ -51,11 +51,29 @@ public class Adventure {
             userName = "Bob";
         }
 
+        System.out.println("`;-.          ___,\n" +
+                "  `.`\\_...._/`.-\"`\n" +
+                "    \\        /      ,\n" +
+                "    /()   () \\    .' `-._\n" +
+                "   |)  .    ()\\  /   _.'\n" +
+                "   \\  -'-     ,; '. <\n" +
+                "    ;.__     ,;|   > \\\n" +
+                "   / ,    / ,  |.-'.-'\n" +
+                "  (_/    (_/ ,;|.<`\n" +
+                "    \\    ,     ;-`\n" +
+                "     >   \\    /\n" +
+                "    (_,-'`> .'\n" +
+                "         (_,'");
+
         System.out.println("A wild Pikachu appears \n");
+
+
 
         //RUNS BATTLE SEQUENCE WHILE ENEMY OR PLAYER HEALTH IS GREATER THAN ZERO
 
         while (enemyHealth > 0 || playerHealth > 0){
+
+            System.out.println("\n \n \n \n \n \n \n \n \n");
 
             if (playerHealth <= 0){
                 System.out.println("GAME OVER YOU LOSER");

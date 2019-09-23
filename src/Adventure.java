@@ -15,8 +15,8 @@ public class Adventure {
 
         //GLOBAL VAR
 
-        int playerHealth = 100;
-        int enemyHealth = 100;
+        int playerHealth = 50;
+        int enemyHealth = 50;
         int playerPotionCount = 3;
 
 
@@ -79,7 +79,7 @@ public class Adventure {
 
         userName = sc.nextLine();
 
-        System.out.println("Did you say Bob?");
+        System.out.println("Did you enter Bob?");
 
         String nameConfirm = sc.nextLine();
 
@@ -91,6 +91,8 @@ public class Adventure {
             System.out.println("OK Bob, lets play!");
             userName = "Bob";
         }
+
+        sc.nextLine();
 
         System.out.println("`;-.          ___,\n" +
                 "  `.`\\_...._/`.-\"`\n" +
@@ -114,7 +116,7 @@ public class Adventure {
         //RUNS BATTLE SEQUENCE WHILE ENEMY OR PLAYER HEALTH IS GREATER THAN ZERO
 
         while (enemyHealth > 0 || playerHealth > 0){
-            System.out.println("\n\n\n\n\n\n\n\n\n\n");
+            System.out.println("\n\n\n\n");
 
 
             if (playerHealth <= 0){
@@ -136,6 +138,31 @@ public class Adventure {
                         "     >   \\    /\n" +
                         "    (_,-'`> .'\n" +
                         "         (_,'");
+
+                System.out.println("Press Enter to claim reward!");
+                sc.nextLine();
+                System.out.println("" +
+                        "                       ________________\n" +
+                        "                      \\      __      /         __\n" +
+                        "                       \\_____()_____/         /  )\n" +
+                        "                       '============`        /  /\n" +
+                        "                        #---\\  /---#        /  /\n" +
+                        "                       (# @\\| |/@  #)      /  /\n" +
+                        "                        \\   (_)   /       /  /\n" +
+                        "                        |\\ '---` /|      /  /\n" +
+                        "                _______/ \\\\_____// \\____/ o_|\n" +
+                        "               /       \\  /     \\  /   / o_|\n" +
+                        "              / |           o|        / o_| \\\n" +
+                        "             /  |  _____     |       / /   \\ \\\n" +
+                        "            /   |  |===|    o|      / /\\    \\ \\\n" +
+                        "           |    |   \\@/      |     / /  \\    \\ \\\n" +
+                        "           |    |___________o|__/----)   \\    \\/\n" +
+                        "           |    '              ||  --)    \\     |\n" +
+                        "           |___________________||  --)     \\    /\n" +
+                        "                |           o|   ''''   |   \\__/\n" +
+                        "                |            |          |\n" +
+                        "\n" +
+                        "     \"YOU'RE UNDER ARREST FOR ANIMAL CRUELTY!!!\"");
                 break;
             }else{
                 System.out.println( displayStats(playerHealth, enemyHealth, playerPotionCount));
@@ -154,12 +181,19 @@ public class Adventure {
                     int playerAttack = random.nextInt(20);
                     int enemyAttack = random.nextInt(20);
                     enemyHealth -= playerAttack;
-                    System.out.println("CRITICAL HIT!");
+                    System.out.println(userName + " uses attack!");
+
+                    if(playerAttack > 15){
+                        System.out.println("CRITICAL HIT!");
+                    }
                     System.out.println("you did " + playerAttack + " damage to Pikachu");
                     System.out.println("Pikachu attacks");
                     playerHealth-= enemyAttack;
                     System.out.println("Pikachu did " + enemyAttack + " damage");
+
+
                 } else if(playerAction.equalsIgnoreCase("use potion") || playerAction.equalsIgnoreCase("2")) {
+
                     if(playerPotionCount == 0) {
                         System.out.println("You don't have any potions left, learn to count");
                     } else {
@@ -173,7 +207,7 @@ public class Adventure {
                     } //If
 
                     int enemyAttack = random.nextInt(20);
-                    System.out.println("Pikachu attacks back");
+                    System.out.println("Pikachu attacks");
                     playerHealth-= enemyAttack;
                     System.out.println("Pikachu did " + enemyAttack + " damage \n");
                 } //If

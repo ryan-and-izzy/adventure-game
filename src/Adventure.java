@@ -16,7 +16,7 @@ public class Adventure {
         //GLOBAL VAR
 
         int playerHealth = 50;
-        int enemyHealth = 50;
+        int enemyHealth = 5;
         int playerPotionCount = 3;
 
 
@@ -142,27 +142,27 @@ public class Adventure {
                 System.out.println("Press Enter to claim reward!");
                 sc.nextLine();
                 System.out.println("" +
-                        "                       ________________\n" +
-                        "                      \\      __      /         __\n" +
-                        "                       \\_____()_____/         /  )\n" +
-                        "                       '============`        /  /\n" +
-                        "                        #---\\  /---#        /  /\n" +
-                        "                       (# @\\| |/@  #)      /  /\n" +
-                        "                        \\   (_)   /       /  /\n" +
-                        "                        |\\ '---` /|      /  /\n" +
-                        "                _______/ \\\\_____// \\____/ o_|\n" +
-                        "               /       \\  /     \\  /   / o_|\n" +
-                        "              / |           o|        / o_| \\\n" +
-                        "             /  |  _____     |       / /   \\ \\\n" +
-                        "            /   |  |===|    o|      / /\\    \\ \\\n" +
-                        "           |    |   \\@/      |     / /  \\    \\ \\\n" +
-                        "           |    |___________o|__/----)   \\    \\/\n" +
-                        "           |    '              ||  --)    \\     |\n" +
-                        "           |___________________||  --)     \\    /\n" +
-                        "                |           o|   ''''   |   \\__/\n" +
-                        "                |            |          |\n" +
+                        "               ________________\n" +
+                        "              \\      __      /         __\n" +
+                        "               \\_____()_____/         /  )\n" +
+                        "               '============`        /  /\n" +
+                        "                #---\\  /---#        /  /\n" +
+                        "               (# @\\| |/@  #)      /  /\n" +
+                        "                \\   (_)   /       /  /\n" +
+                        "                |\\ '---` /|      /  /\n" +
+                        "        _______/ \\\\_____// \\____/ o_|\n" +
+                        "       /       \\  /     \\  /   / o_|\n" +
+                        "      / |           o|        / o_| \\\n" +
+                        "     /  |  _____     |       / /   \\ \\\n" +
+                        "    /   |  |===|    o|      / /\\    \\ \\\n" +
+                        "   |    |   \\@/      |     / /  \\    \\ \\\n" +
+                        "   |    |___________o|__/----)   \\    \\/\n" +
+                        "   |    '              ||  --)    \\     |\n" +
+                        "   |___________________||  --)     \\    /\n" +
+                        "        |           o|   ''''   |   \\__/\n" +
+                        "        |            |          |\n" +
                         "\n" +
-                        "     \"YOU'RE UNDER ARREST FOR ANIMAL CRUELTY!!!\"");
+                        "\"YOU'RE UNDER ARREST FOR ANIMAL CRUELTY!!!\"");
                 break;
             }else{
                 System.out.println( displayStats(playerHealth, enemyHealth, playerPotionCount));

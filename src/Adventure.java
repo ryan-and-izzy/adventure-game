@@ -16,7 +16,7 @@ public class Adventure {
         //GLOBAL VAR
 
         int playerHealth = 50;
-        int enemyHealth = 5;
+        int enemyHealth = 50;
         int playerPotionCount = 3;
 
 
